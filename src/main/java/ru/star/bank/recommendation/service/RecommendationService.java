@@ -30,12 +30,10 @@ public class RecommendationService {
     public List<RecommendationDto> getRecommendations(UUID userId) {
         List<RecommendationDto> result = new ArrayList<>();
 
-        // 1. Статические правила
         for (RecommendationRuleSet rule : staticRuleSets) {
             rule.evaluate(userId).ifPresent(result::add);
         }
 
-        // 2. Динамические правила
         List<DynamicRule> dynamicRules = dynamicRuleRepository.findAll();
         for (DynamicRule rule : dynamicRules) {
             boolean ruleMatches = true;

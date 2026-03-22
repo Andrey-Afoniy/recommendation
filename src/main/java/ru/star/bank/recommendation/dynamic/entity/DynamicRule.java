@@ -40,7 +40,6 @@ public class DynamicRule {
         query.setRule(this);
     }
 
-    // геттеры и сеттеры
     public UUID getId() {
         return id;
     }

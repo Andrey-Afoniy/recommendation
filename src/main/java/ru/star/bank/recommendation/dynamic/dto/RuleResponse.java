@@ -10,7 +10,6 @@ public class RuleResponse {
     private String productText;
     private List<QueryDto> rule;
 
-    // геттеры и сеттеры
     public UUID getId() {
         return id;
     }
@@ -56,7 +55,6 @@ public class RuleResponse {
         private List<String> arguments;
         private boolean negate;
 
-        // геттеры и сеттеры
         public String getQuery() {
             return query;
         }

@@ -51,7 +51,7 @@ public class RuleQueryExecutor {
     }
 
     private boolean compareSumWithConstant(UUID userId, List<String> args) {
-        // args: [productType, transactionType, operator, constant]
+
         String productType = args.get(0);
         String transactionType = args.get(1);
         String operator = args.get(2);
@@ -63,7 +63,6 @@ public class RuleQueryExecutor {
     }
 
     private boolean compareDepositWithdraw(UUID userId, List<String> args) {
-        // args: [productType, operator]
         String productType = args.get(0);
         String operator = args.get(1);
 

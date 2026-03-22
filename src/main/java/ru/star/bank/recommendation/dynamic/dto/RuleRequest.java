@@ -15,7 +15,6 @@ public class RuleRequest {
     @NotNull
     private List<QueryDto> rule;
 
-    // геттеры и сеттеры
     public String getProductName() {
         return productName;
     }
@@ -55,7 +54,6 @@ public class RuleRequest {
         private List<String> arguments;
         private boolean negate;
 
-        // геттеры и сеттеры
         public String getQuery() {
             return query;
         }

@@ -26,7 +26,6 @@ import java.util.HashMap;
 )
 public class DataSourceConfiguration {
 
-    // ----- Основная БД (H2, @Primary) -----
     @Primary
     @Bean(name = "defaultDataSource")
     @ConfigurationProperties(prefix = "spring.datasource")
@@ -40,7 +39,6 @@ public class DataSourceConfiguration {
         return new JdbcTemplate(dataSource);
     }
 
-    // ----- Вторая БД (PostgreSQL) для динамических правил -----
     @Bean(name = "dynamicDataSource")
     public DataSource dynamicDataSource(
             @Value("${app.dynamic-db.url}") String url,

@@ -14,7 +14,6 @@ public class RecommendationDto {
         this.text = text;
     }
 
-    // геттеры и сеттеры
     public String getName() {
         return name;
     }
