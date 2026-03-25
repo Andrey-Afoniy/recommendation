@@ -12,7 +12,10 @@ import java.util.UUID;
 public class Invest500Rule implements RecommendationRuleSet {
     private static final String PRODUCT_ID = "9cf94e79-c945-450f-b539-4f943704b970";
     private static final String PRODUCT_NAME = "Invest 500";
-    private static final String PRODUCT_TEXT = "Откройте свой путь к успеху... (полный текст)";
+    private static final String PRODUCT_TEXT = "Откройте свой путь к успеху с индивидуальным инвестиционным счетом (ИИС) от нашего банка! \" +\n" +
+            "            \"Воспользуйтесь налоговыми льготами и начните инвестировать с умом. Пополните счет до конца года и получите выгоду \" +\n" +
+            "            \"в виде вычета на взнос в следующем налоговом периоде. Не упустите возможность разнообразить свой портфель, снизить риски \" +\n" +
+            "            \"и следить за актуальными рыночными тенденциями. Откройте ИИС сегодня и станьте ближе к финансовой независимости!";
 
     private final RecommendationRepository repository;
 
