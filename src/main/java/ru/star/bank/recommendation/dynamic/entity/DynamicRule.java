@@ -40,6 +40,9 @@ public class DynamicRule {
         query.setRule(this);
     }
 
+    @OneToOne(mappedBy = "rule", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private RuleStats ruleStats;
+
     public UUID getId() {
         return id;
     }
@@ -79,4 +82,6 @@ public class DynamicRule {
     public void setQueries(List<RuleQuery> queries) {
         this.queries = queries;
     }
+    public RuleStats getRuleStats() { return ruleStats; }
+    public void setRuleStats(RuleStats ruleStats) { this.ruleStats = ruleStats; }
 }
