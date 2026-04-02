@@ -55,14 +55,15 @@ public class DataSourceConfiguration {
 
     @Bean(name = "dynamicEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean dynamicEntityManagerFactory(
-            @Qualifier("dynamicDataSource") DataSource dataSource) {
+            @Qualifier("dynamicDataSource") DataSource dataSource,
+            @Value("${spring.jpa.hibernate.ddl-auto:create-drop}") String ddlAuto) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
         em.setPackagesToScan("ru.star.bank.recommendation.dynamic.entity");
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         HashMap<String, Object> properties = new HashMap<>();
-        properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-        properties.put("hibernate.hbm2ddl.auto", "create-drop");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+        properties.put("hibernate.hbm2ddl.auto", ddlAuto);
         em.setJpaPropertyMap(properties);
         return em;
     }
